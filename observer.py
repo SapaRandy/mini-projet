@@ -1,10 +1,3 @@
-class Elf:
-    def __init__(self, name):
-        self.name = name
-
-    def update(self, gift_description):
-        print(f"Elf {self.name} notified: {gift_description}")
-
 class Workshop:
     def __init__(self):
         self.elfes = []
@@ -12,6 +5,20 @@ class Workshop:
     def register(self, elfe):
         self.elfes.append(elfe)
 
-    def notify(self, gift_description):
+    def notify_free_elf(self, gift_description: str):
         for elfe in self.elfes:
-            elfe.update(gift_description)
+            if elfe.state.can_receive_task():
+                elfe.assign_task(gift_description)
+                return
+        print(" No free elves available !")
+    
+    def __iter__(self):
+        self._idx = 0
+        return self
+    
+    def __next__(self):
+        if self._idx < len(self.elfes):
+            elf = self.elfes[self._idx]
+            self._idx += 1
+            return elf
+        raise StopIteration

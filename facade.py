@@ -1,6 +1,7 @@
 from factory import *
 from observer import *
 from decorateur import *
+from elf import *
 
 
 class SantaClausFacade:
@@ -19,7 +20,8 @@ class SantaClausFacade:
 
         description = gift.description()
 
-        self.workshop.notify(description)
+        self.workshop.notify_free_elf(description)
 
         print(description)
         print(delivery_strategy.deliver())
+        print("-" * 50)
