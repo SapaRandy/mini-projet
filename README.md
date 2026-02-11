@@ -45,6 +45,9 @@ python3 main.py
 Tu devrais obtenir une sortie similaire dans la console :
 
 Elf Stark notified: Toy wrapped with ribbon with message 'Ho Ho Ho!'
-Elf Rob notified: Toy wrapped with ribbon with message 'Ho Ho Ho!'
 Toy wrapped with ribbon with message 'Ho Ho Ho!'
 Delivered by reindeer
+--------------------------------------------------
+Elf Stark notified: Book wrapped with ribbon with message 'Ho Ho Ho!'
+Book wrapped with ribbon with message 'Ho Ho Ho!'
+Delivered by drone
